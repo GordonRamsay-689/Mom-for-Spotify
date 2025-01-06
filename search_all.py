@@ -32,8 +32,10 @@ def search_all():
     
 if __name__ == '__main__':
     results = search_all()
+    
+    print()
     if results:
-        print("Found in following playlists.\n-----------\n")
+        print("Found in following playlists.\n-----------")
     else:
         print("Not found in any playlist.")
         
