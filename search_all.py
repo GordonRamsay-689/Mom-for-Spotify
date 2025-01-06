@@ -40,4 +40,4 @@ if __name__ == '__main__':
         print("Not found in any playlist.")
         
     for result in results:
-        print(result[1])
+        print(result[1], f"\nPlaylist ID: {result[0]}\n")
