@@ -1,1 +1,19 @@
 - add exponential backoff
+- reduce network calls. 
+-- Research how to get more tracks in one go
+-- Asynch calls probably not helpful, but maybe search several playlists
+in different threads (use threadpoolexecutor, max=8)?
+
+expected output for "rumination"
+-----------
+24 - December 
+Playlist ID: 123IkNYN7H7Mvdzd97oMfW
+
+Electronic Music Playlist 
+Playlist ID: 4msVeW48Qi7SmknjcBncxo
+
+⚙️Spacehammer Orchestra🎶 
+Playlist ID: 1pVSihIsg7GJZh7LvWb70k
+
+🎶uWu- & Softcore 
+Playlist ID: 7wy0SlybCkzjmGTglaICnj

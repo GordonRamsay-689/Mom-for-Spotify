@@ -13,26 +13,36 @@ def search_playlist(p_id, search, display=False):
     offset = 0
     
     length = 0
+    search = search.upper()
+    first_char = search[0]
+
     while True:
         response = sp.playlist_items(playlist_id,
                                      offset=offset,
                                      fields='items.track.name',
                                      additional_types=['track'])
-    
-        if len(response['items']) == 0:
+
+        playlists = response['items']
+
+        if not playlists:
             break
-    
-        if display:
-            pprint(response['items'])
         
-        for item in response['items']:
-            if search.upper() in item['track']['name'].upper():
-                print(p_id)
-                print(item['track']['name'].upper())
-                return p_id
+        for playlist in playlists:
+            offset += 1
+
+            current = playlist['track']['name']
             
-        offset = offset + len(response['items'])
-        length += len(response['items'])    
+            if not current:
+                continue
+
+            current = current.upper()
+            
+            if first_char != current[0]:
+                continue
+
+            if search in current:
+                print("Matched:", current)
+                return p_id        
     
     if display:
         print("Number of tracks in playlist:", length)
